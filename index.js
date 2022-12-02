@@ -60,6 +60,25 @@ function createIntern() {
 }
 
 function runInquire() {
-
+    createManager();
+    inquirer.prompt([{
+        name: "addMember",
+        message: "Choose which member to add, or choose finish:",
+        type: "list",
+        choices: [
+            "Engineer",
+            "Intern",
+            "Finish"
+        ]
+    }
+    ]).then((response) => {
+        if(response.addMember === "Engineer") {
+            createEngineer();
+        } else if (response.addMember === "Intern") {
+            createIntern();
+        } else {
+            //finished with adding members
+        }
+    })
 }
 runInquire();
