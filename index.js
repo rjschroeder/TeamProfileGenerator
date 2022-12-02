@@ -36,7 +36,15 @@ function createManager() {
 }
 
 function createEngineer() {
-
+    inquirer.prompt(engineerQuestions).then((response) => {
+        let engineer = new Engineer(
+            response.engineerName,
+            response.engineerID,
+            response.engineerEmail,
+            response.engineerGithub
+        );
+        arr.push(engineer);
+    })
 }
 
 function createIntern() {
