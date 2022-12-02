@@ -32,6 +32,7 @@ function createManager() {
             response.managerOfficeNumber
         );
         arr.push(manager);
+        addMember();
     })
 }
 
@@ -85,7 +86,6 @@ function addMember() {
 
 function runInquire() {
     createManager();
-    addMember();
     console.log(arr);
 }
 runInquire();
