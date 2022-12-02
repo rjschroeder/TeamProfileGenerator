@@ -59,29 +59,33 @@ function createIntern() {
     })
 }
 
+function addMember() {
+    inquirer.prompt([{
+        name: "addMember",
+        message: "Choose which member to add, or choose finish:",
+        type: "list",
+        choices: [
+            "Engineer",
+            "Intern",
+            "Finish"
+        ]
+    }
+    ]).then((response) => {
+        if(response.addMember === "Engineer") {
+            createEngineer();
+            addMember();
+        } else if (response.addMember === "Intern") {
+            createIntern();
+            addMember();
+        } else {
+            //done here
+        }
+    })
+}
+
 function runInquire() {
     createManager();
-    let finished = false;
-    while(!finished) {
-        inquirer.prompt([{
-            name: "addMember",
-            message: "Choose which member to add, or choose finish:",
-            type: "list",
-            choices: [
-                "Engineer",
-                "Intern",
-                "Finish"
-            ]
-        }
-        ]).then((response) => {
-            if(response.addMember === "Engineer") {
-                createEngineer();
-            } else if (response.addMember === "Intern") {
-                createIntern();
-            } else {
-                finished = true;
-            }
-        })
-    }
+    addMember();
+    console.log(arr);
 }
 runInquire();
