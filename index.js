@@ -48,7 +48,15 @@ function createEngineer() {
 }
 
 function createIntern() {
-
+    inquirer.prompt(internQuestions).then((response) => {
+        let intern = new Intern(
+            response.internName,
+            response.internID,
+            response.internEmail,
+            response.internSchool
+        );
+        arr.push(intern);
+    })
 }
 
 function runInquire() {
