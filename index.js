@@ -20,3 +20,20 @@ const internQuestions = [
     {name: "internEmail",message: "What is this intern's email?",type: "input"},
     {name: "internSchool",message: "What is this intern's school?",type: "input"}]
 
+
+function createManager() {
+
+}
+
+function createEngineer() {
+
+}
+
+function createIntern() {
+
+}
+
+function runInquire() {
+
+}
+runInquire();
