@@ -2,6 +2,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+let arr = [];
+
 const managerQuestions = [
     {name: "managerName",message: "What is the manager's name?",type: "input"},
     {name: "managerID",message: "What is the manager's ID?",type: "input"},
@@ -22,7 +24,15 @@ const internQuestions = [
 
 
 function createManager() {
-
+    inquirer.prompt(managerQuestions).then((response) => {
+        let manager = new Manager(
+            response.managerName,
+            response.managerID,
+            response.managerEmail,
+            response.managerOfficeNumber
+        );
+        arr.push(manager);
+    })
 }
 
 function createEngineer() {
