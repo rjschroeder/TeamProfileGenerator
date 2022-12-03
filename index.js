@@ -82,7 +82,8 @@ function addMember() {
         } else if (response.addMember === "Intern") {
             createIntern();
         } else {
-            //done here
+            console.log("Finished");
+            console.log(arr);
         }
     })
 }
