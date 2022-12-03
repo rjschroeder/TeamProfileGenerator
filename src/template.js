@@ -26,7 +26,7 @@ const generateHTML = teamArray => {
         <div>
             <p class="border rounded bg-light">ID: ${engineer.getID()}</p>
             <p class="border rounded bg-light">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</p>
-            <p class="border rounded bg-light">GitHub: ${engineer.getGithub()}</p>
+            <p class="border rounded bg-light">GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
         </div>
     </div>`;
     }
