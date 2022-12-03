@@ -10,7 +10,7 @@ const generateHTML = teamArray => {
         </div>
         <div>
             <p class="border rounded bg-light">ID: ${manager.getID()}</p>
-            <p class="border rounded bg-light">Email: ${manager.getEmail()}</p>
+            <p class="border rounded bg-light">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</p>
             <p class="border rounded bg-light">Office Number: ${manager.getOfficeNumber()}</p>
         </div>
     </div>`;
@@ -25,7 +25,7 @@ const generateHTML = teamArray => {
         </div>
         <div>
             <p class="border rounded bg-light">ID: ${engineer.getID()}</p>
-            <p class="border rounded bg-light">Email: ${engineer.getEmail()}</p>
+            <p class="border rounded bg-light">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</p>
             <p class="border rounded bg-light">GitHub: ${engineer.getGithub()}</p>
         </div>
     </div>`;
@@ -40,7 +40,7 @@ const generateHTML = teamArray => {
         </div>
         <div>
             <p class="border rounded bg-light">ID: ${intern.getID()}</p>
-            <p class="border rounded bg-light">Email: ${intern.getEmail()}</p>
+            <p class="border rounded bg-light">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</p>
             <p class="border rounded bg-light">School: ${intern.getSchool()}</p>
         </div>
     </div>`;
