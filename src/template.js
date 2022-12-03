@@ -30,7 +30,17 @@ const generateHTML = teamArray => {
     }
 
     const generateInternHTML = intern => {
-
+        return `        <div id="card" class="col border rounded m-3 shadow">
+        <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
+            <p class="h2">${intern.getName()}</p>
+            <p class="h6 text-light">Intern</p>
+        </div>
+        <div>
+            <p class="border rounded bg-light">ID: ${intern.getID()}</p>
+            <p class="border rounded bg-light">Email: ${intern.getEmail()}</p>
+            <p class="border rounded bg-light">School: ${intern.getSchool()}</p>
+        </div>
+    </div>`;
     }
     page.push(`<!DOCTYPE html>
 <html lang="en"> 
