@@ -2,7 +2,17 @@ const generateHTML = teamArray => {
     let page = [];
 
     const generateManagerHTML = manager => {
-        
+        return `        <div id="card" class="col border rounded m-3 shadow">
+        <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
+            <p class="h2">${manager.getName()}</p>
+            <p class="h6 text-light">Manager</p>
+        </div>
+        <div>
+            <p class="border rounded bg-light">ID: ${manager.getID()}</p>
+            <p class="border rounded bg-light">Email: ${manager.getEmail()}</p>
+            <p class="border rounded bg-light">Office Number: ${manager.getOfficeNumber()}</p>
+        </div>
+    </div>`;
     }
 
     const generateEngineerHTML = engineer => {
@@ -13,7 +23,7 @@ const generateHTML = teamArray => {
 
     }
     page.push(`<!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
     <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
