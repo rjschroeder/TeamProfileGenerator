@@ -1,6 +1,9 @@
+//function to generate all of the HTML of the page
 const generateHTML = teamArray => {
+    //array that stores all components of the page until the end
     let page = [];
 
+    //generates manager card
     const generateManagerHTML = manager => {
         return `
     <div id="card" class="col border rounded m-3 shadow">
@@ -16,6 +19,7 @@ const generateHTML = teamArray => {
     </div>`;
     }
 
+    //generates engineer card
     const generateEngineerHTML = engineer => {
         return `
     <div id="card" class="col border rounded m-3 shadow">
@@ -31,6 +35,7 @@ const generateHTML = teamArray => {
     </div>`;
     }
 
+    //generates intern card
     const generateInternHTML = intern => {
         return `
     <div id="card" class="col border rounded m-3 shadow">
@@ -45,6 +50,9 @@ const generateHTML = teamArray => {
         </div>
     </div>`;
     }
+
+    //adds the HTML header to the top of the page before any elements
+    //ends right where elements would be appended onto parent div
     page.push(`<!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -64,6 +72,8 @@ const generateHTML = teamArray => {
     <div id="cardsDiv">
         <div class="row row-cols-4 p-3 justify-content-md-center border rounded">
     `);
+
+    //for each member in the passed in array of team members, generate respective HTML elements
     teamArray.forEach(element => {
         if(element.getRole() === "Manager"){
             page.push(generateManagerHTML(element));
@@ -75,11 +85,13 @@ const generateHTML = teamArray => {
             console.log("Error");
         }
     });
+    //add the rest of the HTML after the card container
     page.push(`
        </div>
     </div>
   </body>
 </html>`);
+    //returns the elements as one string
     return page.join("");
 }
 
