@@ -5,6 +5,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const buildPage = require("./src/template");
 
 let arr = [];
 
@@ -84,8 +85,13 @@ function addMember() {
         } else {
             console.log("Finished");
             console.log(arr);
+            build();
         }
     })
+}
+
+function build() {
+    fs.writeFileSync("./dist/team.html", buildPage(arr), "utf-8");
 }
 
 createManager();
