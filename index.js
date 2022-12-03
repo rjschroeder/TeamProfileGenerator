@@ -26,7 +26,6 @@ const internQuestions = [
     {name: "internEmail",message: "What is this intern's email?",type: "input"},
     {name: "internSchool",message: "What is this intern's school?",type: "input"}]
 
-
 function createManager() {
     inquirer.prompt(managerQuestions).then((response) => {
         let manager = new Manager(
@@ -49,6 +48,7 @@ function createEngineer() {
             response.engineerGithub
         );
         arr.push(engineer);
+        addMember();
     })
 }
 
@@ -61,6 +61,7 @@ function createIntern() {
             response.internSchool
         );
         arr.push(intern);
+        addMember();
     })
 }
 
@@ -78,18 +79,12 @@ function addMember() {
     ]).then((response) => {
         if(response.addMember === "Engineer") {
             createEngineer();
-            addMember();
         } else if (response.addMember === "Intern") {
             createIntern();
-            addMember();
         } else {
             //done here
         }
     })
 }
 
-function runInquire() {
-    createManager();
-    console.log(arr);
-}
-runInquire();
+createManager();
