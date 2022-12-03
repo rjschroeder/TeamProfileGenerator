@@ -2,7 +2,8 @@ const generateHTML = teamArray => {
     let page = [];
 
     const generateManagerHTML = manager => {
-        return `        <div id="card" class="col border rounded m-3 shadow">
+        return `
+    <div id="card" class="col border rounded m-3 shadow">
         <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
             <p class="h2">${manager.getName()}</p>
             <p class="h6 text-light">Manager</p>
@@ -16,7 +17,8 @@ const generateHTML = teamArray => {
     }
 
     const generateEngineerHTML = engineer => {
-        return `        <div id="card" class="col border rounded m-3 shadow">
+        return `
+    <div id="card" class="col border rounded m-3 shadow">
         <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
             <p class="h2">${engineer.getName()}</p>
             <p class="h6 text-light">Engineer</p>
@@ -30,7 +32,8 @@ const generateHTML = teamArray => {
     }
 
     const generateInternHTML = intern => {
-        return `        <div id="card" class="col border rounded m-3 shadow">
+        return `
+    <div id="card" class="col border rounded m-3 shadow">
         <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
             <p class="h2">${intern.getName()}</p>
             <p class="h6 text-light">Intern</p>
@@ -72,7 +75,8 @@ const generateHTML = teamArray => {
             console.log("Error");
         }
     });
-    page.push(`       </div>
+    page.push(`
+       </div>
     </div>
   </body>
 </html>`);
