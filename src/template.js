@@ -78,3 +78,5 @@ const generateHTML = teamArray => {
 </html>`);
     return page.join("");
 }
+
+module.exports = generateHTML;
