@@ -31,9 +31,20 @@ const generateHTML = teamArray => {
     <div id="cardsDiv">
         <div class="row row-cols-4 p-3 justify-content-md-center border rounded">
     `);
-    //do generation here
+    teamArray.forEach(element => {
+        if(element.getRole() === "Manager"){
+            page.push(generateManagerHTML(element));
+        } else if (element.getRole() === "Engineer") {
+            page.push(generateEngineerHTML(element));
+        } else if (element.getRole() === "Intern") {
+            page.push(generateInternHTML(element));
+        } else {
+            console.log("Error");
+        }
+    });
     page.push(`       </div>
     </div>
   </body>
 </html>`);
+    return page.join("");
 }
