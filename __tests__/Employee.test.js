@@ -29,3 +29,8 @@ test("Is able to get Email from getter?", () => {
     let testObject = new Employee("Jack", 8667, "jack@gmail.com");
     expect(testObject.getEmail()).toBe("jack@gmail.com");
 });
+
+test("Is able to get role from getter?", () => {
+    let testObject = new Employee("Jack", 8667, "jack@gmail.com");
+    expect(testObject.getRole()).toBe("Employee");
+})
