@@ -16,7 +16,17 @@ const generateHTML = teamArray => {
     }
 
     const generateEngineerHTML = engineer => {
-
+        return `        <div id="card" class="col border rounded m-3 shadow">
+        <div class="m-2 p-2 bg-primary rounded font-weight-bold text-center text-white" id="nopad">
+            <p class="h2">${engineer.getName()}</p>
+            <p class="h6 text-light">Engineer</p>
+        </div>
+        <div>
+            <p class="border rounded bg-light">ID: ${engineer.getID()}</p>
+            <p class="border rounded bg-light">Email: ${engineer.getEmail()}</p>
+            <p class="border rounded bg-light">GitHub: ${engineer.getGithub()}</p>
+        </div>
+    </div>`;
     }
 
     const generateInternHTML = intern => {
